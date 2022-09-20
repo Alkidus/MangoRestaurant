@@ -2,6 +2,7 @@ using Mango.Services.ProductAPI.DbContexts;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +12,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-options.UseSqlServer(connectionString:"DefaultConnection"));
+
+//old version
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+//Configuration.GetConnectionString();
+
+// получаем строку подключения из файла конфигурации
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// добавляем контекст ApplicationContext в качестве сервиса в приложение
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+
 
 var app = builder.Build();
 
