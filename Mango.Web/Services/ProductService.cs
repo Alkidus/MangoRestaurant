@@ -13,7 +13,7 @@ namespace Mango.Web.Services
 
         public async Task<T> CreateProductAsync<T>(ProductDTO productDTO)
         {
-            return await this.SendAsync<T>(new ApiRequest
+            return await this.SendAsync<T>(new ApiRequest()
             {
                 ApiType = SD.ApiType.POST,
                 Data = productDTO,
@@ -34,7 +34,7 @@ namespace Mango.Web.Services
 
         public async Task<T> GetAllProductsAsync<T>()
         {
-            return await this.SendAsync<T>(new ApiRequest
+            return await this.SendAsync<T>(new ApiRequest()
             {
                 ApiType = SD.ApiType.GET,
                 URL = SD.ProductAPIBase + "api/products",
