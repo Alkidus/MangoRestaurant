@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Mango.Services.Identity.MainModule;
+namespace Mango.Services.Identity.Views;
 
 public static class Extensions
 {

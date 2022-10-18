@@ -8,7 +8,7 @@ using System.Text.Json;
 using Duende.IdentityServer;
 using Duende.IdentityServer.Test;
 
-namespace Mango.Services.Identity.MainModule;
+namespace Mango.Services.Identity.Views;
 
 public class TestUsers
 {

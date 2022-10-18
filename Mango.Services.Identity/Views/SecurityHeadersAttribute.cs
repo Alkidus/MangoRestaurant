@@ -5,7 +5,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Mango.Services.Identity.MainModule;
+namespace Mango.Services.Identity.Views;
 
 public class SecurityHeadersAttribute : ActionFilterAttribute
 {
